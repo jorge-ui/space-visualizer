@@ -1,0 +1,100 @@
+.Landing {
+   position: relative;
+   display: block;
+   width: 100%;
+   height: 100%;
+   z-index: 10;
+   & main {
+      position: relative;
+      margin-top: 18vh;
+      background-color: rgba(255, 255, 255, 0.115);
+      display: flex;
+      justify-content: center;
+      transition: all 400ms cubic-bezier(.29,.87,1,1) 450ms ;
+      color: rgb(243, 243, 243);
+      & header {
+         width: fit-content;
+         transition: all 500ms cubic-bezier(1,-0.31,.83,.67);
+         & h1 {
+            font-size: 6rem;
+            font-weight: 400;
+            margin: 0;
+         }
+         & p {
+            font-size: 1.5rem;
+            margin: 0;
+            padding-bottom: 15px;
+         }
+      }
+      & .buttonWrap {
+         width: 20vw;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         transition: all 500ms cubic-bezier(1,-0.31,.83,.67);
+         & button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.347);
+            background-color: transparent;
+            border-radius: 10rem;
+            width: 13vw;
+            height: 13vw;
+            font-family: 'Hind Madurai';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 2.2rem;
+            color: #fff;
+            text-transform: uppercase;
+            transition: background-color 400ms;
+            &:hover {
+               background-color: rgba(255, 255, 255, 0.231);
+               cursor: pointer;
+            }
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 850px) {
+   .Landing {
+      & main {
+         margin-top: 15vh;
+         & .buttonWrap {
+            position: absolute;
+            top: 105%;
+            width: 100%;
+            left: 0;
+            right: 0;
+            & button {
+               background-color: rgba(255, 255, 255, 0.115);
+               width: 20vw;
+               height: 20vw;
+            }
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 575px) {
+   .Landing {
+      & main {
+         & header {
+            & h1 {
+               font-size: 3rem;
+            }
+            & p {
+               font-size: 1rem;
+            }
+         }
+         & .buttonWrap {
+            & button {
+               width: 35vw;
+               height: 35vw;
+            }
+         }
+      }
+   }
+}

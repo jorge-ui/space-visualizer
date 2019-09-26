@@ -1,0 +1,54 @@
+.Footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: fixed;
+   overflow: hidden;
+   bottom: 0;
+   height: 4vh;
+   min-height: 30px;
+   width: 100vw;
+   padding: 0 5vw;
+   box-sizing: border-box;
+   background-color: rgba(255, 255, 255, 0.115);
+   color: rgb(208, 208, 208);
+   transform: translateY(4vh);
+   opacity: 0;
+   transition: transform 400ms;
+   & ul {
+      display: flex;
+      padding: 0;
+      list-style: none;
+      & li {
+         padding: 0 8px;
+         &:first-child { padding-left: 0 }
+      }
+   }
+   & span {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      & a {
+         height: 100%;
+         width: fit-content;
+         display: flex;
+         align-items: center;
+         &:hover * { filter:drop-shadow(0 0 1px white) }
+         & svg {
+            height: 90%;
+            width: auto;
+            padding-left: 10px;
+            & * { fill: rgba(255, 255, 255, 0.476) }
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 575px) {
+   .Footer {
+      height: 5vh;
+      & span {
+         margin: 0 auto;
+      }
+   }
+}

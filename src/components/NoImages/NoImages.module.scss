@@ -1,0 +1,54 @@
+.NoImages {
+   position: fixed;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   color: #fff;
+   opacity: 0;
+   transition: opacity 400ms;
+   z-index: 5;
+   & main {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.115);
+      text-align: center;
+      padding: 10px 0;
+      & h1 {
+         font-weight: 400;
+      }
+      & button {
+         display: block;
+         margin: 0 auto;
+         outline: none;
+         border: 1px solid rgba(255, 255, 255, 0.347);
+         background-color: transparent;
+         border-radius: 10rem;
+         width: 5vw;
+         height: 5vw;
+         font-family: 'Hind Madurai';
+         font-style: normal;
+         font-weight: 300;
+         font-size: 1.2rem;
+         color: #fff;
+         text-transform: uppercase;
+         transition: background-color 400ms;
+         &:hover {
+            background-color: rgba(255, 255, 255, 0.231);
+            cursor: pointer;
+         }
+      }
+   }
+}
+@media only screen and (max-width: 675px) {
+   .NoImages {
+      & main {
+         & button {
+            width: 15vw;
+            height: 15vw;
+         }
+      }
+   }
+}

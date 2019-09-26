@@ -1,0 +1,168 @@
+:root {
+   --inputFocus-m-top: 40vh;
+   --input-h: 30px;
+   --input-w: 20vw;
+}
+
+.form {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   display: block;
+   z-index: 10;
+   & > div { width: 100%;}
+   & .infoWrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      & .info {
+         color: #fff;
+         margin: 0 auto;
+         display: block;
+         position: relative;
+         width: var(--input-w);
+         height: var(--input-h);
+         & > span:first-child {
+            opacity: 0;
+            position: absolute;
+            right: 100%;
+            width: fit-content;
+            margin-right: 11px;
+            transition: all 400ms;
+         }
+         & > span:last-child {
+            opacity: 0;
+            position: absolute;
+            left: 100%;
+            width: fit-content;
+            margin-left: 10px;
+            transition: all 400ms;
+         }
+      }
+   }
+   & > span {
+      color: #fff;
+      padding: 0 10px;
+      transition: all 400ms;
+      opacity: 0;
+   }
+
+   & .searchWrap[show=true] {
+      height: 100vh;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      & input {
+         color: #fff;
+         margin-top: var(--inputFocus-m-top);
+         width: 30vw;
+         height: calc(var(--input-h) + 10px);
+         border-bottom-left-radius: 0;
+         border-bottom-right-radius: 0;
+         background-color: rgba(110, 110, 110, 0.578);
+         & ~ label {
+            opacity: 1;
+            margin-top: calc(var(--inputFocus-m-top) - var(--input-h) - 5px);
+            transition: opacity 400ms, margin-top 400ms;
+            z-index: -1;
+         }
+      }
+      & .button {
+         margin-top: 50px;
+         opacity: 1;
+      }
+   }
+   &:hover > input:not(:focus) {
+      cursor: pointer;
+      box-shadow: 0 0 8px whitesmoke;
+   }
+   & input {
+      color: #000;
+      position: relative;
+      transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: block;
+      font-size: 25px;
+      width: var(--input-w);
+      height: var(--input-h);
+      margin: 0 auto;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.476);
+      padding: 10px 18px;
+      box-sizing: border-box;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      z-index: 100;
+      &:not(:focus)  {
+         text-align: center;
+      }
+   }
+   & label {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 30px;
+      color: #fff;
+      font-size: 20px;
+      text-align: center;
+      opacity: 0;
+      overflow: hidden;
+      box-sizing: border-box;
+   }
+   & .button {
+      font-size: 1rem;
+      background-color: rgba(110, 110, 110, 0.578);
+      color: #fff;
+      border-radius: 10px;
+      display: block;
+      left: 0;
+      top: 0;
+      width: 20vw;
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 0;
+      border: none;
+      padding: 10px 30px;
+      opacity: 0;
+      transition: all 400ms;
+   }
+}
+
+@media only screen and (max-width: 575px) {
+   :root {
+      --inputFocus-m-top: 25vh;
+      --input-h: 35px;
+      --input-w: 50vw;
+   }
+   .form {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: block;
+      z-index: 1;
+      & > div { width: 100%;}
+      & input {
+         font-size: 20px;
+         width: var(--input-w);
+         height: var(--input-h);
+         padding: 10px 18px;
+         border-bottom-left-radius: 20px;
+         border-bottom-right-radius: 20px;
+      }
+      & .searchWrap[show=true] {
+         & input {
+            margin-top: var(--inputFocus-m-top);
+            width: 65vw;
+            height: 40px;
+         }
+      }
+      & .infoWrap {
+         display: none;
+      }
+   }
+}

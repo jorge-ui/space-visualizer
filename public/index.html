@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/icons/icon-192.png" />
+    <link rel="apple-touch-icon-precomposed" href="%PUBLIC_URL%/icons/icon-512.png" type="image/png" sizes="192x192 512x512">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:300,400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Space Image Visualizer</title>
+    <script>
+      window.$ = (el) => document.querySelector(el);
+      window.pausePictures = false;
+      window.showNoImages = (searchTerm) => {
+        $('#NoImages').style.display = 'flex'
+        $('#noImagesFor').textContent = window.searchTerm
+        $('#NoImages').style.opacity = 1
+      }
+      window.hideNoImages = () => {
+        $('#NoImages').style.opacity = 0
+        setTimeout(
+          () => $('#NoImages').style.display = 'none',
+          400
+        )
+        
+      }
+      window.hideInfo = () => {
+        $('#imagesFound').style.transform = 'translate(0, -30px)'
+        $('#imagesShowing').style.transform = 'translate(0, -30px)'
+        $('#imagesFound').style.opacity = 0
+        $('#imagesShowing').style.opacity = 0
+      }
+      window.showInfo = () => {
+        $('#imagesFound').style.transform = null
+        $('#imagesShowing').style.transform = null
+        $('#imagesFound').style.opacity = 1
+        $('#imagesShowing').style.opacity = 1
+      }
+      window.setInfo = (found, showing) => {
+        $('#imagesFoundVal').textContent = found
+        $('#imagesShowingVal').textContent = showing
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
